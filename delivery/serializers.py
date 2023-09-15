@@ -4,7 +4,7 @@ from .models import Order, User, Employee
 class OrderSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Order
-		fields = ('id', 'order_id', 'dealer_name', 'client_name', 'location', 'order_price', 'order_currency', 'delivery_LBP', 'delivery_Dollar', 'final_amount_LBP', 'final_amount_Dollar', 'driver_tax', 'driver_tax_Currency', 'remaining_amount_LBP', 'remaining_amount_Dollar', 'items', 'date', 'user', 'status')
+		fields = ('id', 'order_id', 'dealer_name', 'client_name', 'location', 'order_Dollar', 'order_LBP', 'delivery', 'delivery_currency', 'final_amount_LBP', 'final_amount_Dollar', 'driver_tax', 'driver_tax_Currency', 'remaining_amount_LBP', 'remaining_amount_Dollar', 'items', 'date', 'user', 'status')
 
 class UserSerializer(serializers.ModelSerializer):
 	class Meta:
