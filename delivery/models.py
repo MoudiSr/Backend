@@ -24,7 +24,7 @@ class Order(models.Model):
 	status = models.CharField(max_length=255, default="Pending")
 
 	def __str__(self):
-		return f"id={self.id}, name={self.name}, delivery={self.delivery}, status={self.status}"
+		return f"id={self.id}, name={self.dealer_name}, delivery={self.delivery}, status={self.status}"
 
 
 class User(models.Model):
@@ -53,8 +53,8 @@ class Expense(models.Model):
 	id = models.AutoField(primary_key=True)
 	payment_id = models.IntegerField(default=0)
 	payment_type = models.CharField(max_length=255)
-	amount_dollar = models.CharField(max_length=255)
-	amount_lbp = models.CharField(max_length=255)
+	amount_dollar = models.FloatField()
+	amount_lbp = models.FloatField()
 	date = models.DateField(default=date.today)
 	user = models.CharField(max_length=255)
 
