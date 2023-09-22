@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import OrderSerializer, UserSerializer, EmployeeSerializer
-from .models import Order, User, Employee
+from .serializers import OrderSerializer, UserSerializer, EmployeeSerializer, ExpenseSerializer
+from .models import Order, User, Employee, Expense
 
 # Create your views here.
 
@@ -16,3 +16,7 @@ class UserView(viewsets.ModelViewSet):
 class EmployeeView(viewsets.ModelViewSet):
 	serializer_class = EmployeeSerializer
 	queryset = Employee.objects.all()
+
+class ExpenseView(viewsets.ModelViewSet):
+	serializer_class = ExpenseSerializer
+	queryset = Expense.objects.all()

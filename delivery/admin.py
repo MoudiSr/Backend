@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Order, User, Employee
+from .models import Order, User, Employee, Expense
 
 # Register your models here.
 class OrderAdmin(admin.ModelAdmin):
@@ -11,6 +11,10 @@ class UserAdmin(admin.ModelAdmin):
 class EmployeeAdmin(admin.ModelAdmin):
 	list_display = ('id','payment_id', 'name', 'payment', 'quantity', 'currency', 'date', 'user')
 
+class ExpenseAdmin(admin.ModelAdmin):
+	list_display = ('id', 'payment_id', 'payment_type', 'amount_dollar', 'amount_lbp', 'date', 'user')
+
 admin.site.register(Order, OrderAdmin)
 admin.site.register(User, UserAdmin)
 admin.site.register(Employee, EmployeeAdmin)
+admin.site.register(Expense, ExpenseAdmin)

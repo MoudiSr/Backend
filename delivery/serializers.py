@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Order, User, Employee
+from .models import Order, User, Employee, Expense
 
 class OrderSerializer(serializers.ModelSerializer):
 	class Meta:
@@ -15,3 +15,8 @@ class EmployeeSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Employee
 		fields = ('id', 'payment_id', 'name', 'payment', 'quantity', 'currency', 'date', 'user')
+
+class ExpenseSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Expense
+		fields = ('id', 'payment_id', 'payment_type', 'amount_dollar', 'amount_lbp', 'date', 'user')
